@@ -1,8 +1,13 @@
 ▲ Next.js 16.3.4 (Turbopack)
 - Local:         http://localhost:4173
 - Network:       http://0.0.0.0:4173
-✓ Ready in 245ms
-✓ Running next.config.ts took 22ms
+✓ Ready in 248ms
+✓ Running next.config.ts took 19ms
 
- GET / 200 in 232ms (next.js: 136ms, application-code: 97ms)
- GET /?_r=12_0 200 in 32ms (next.js: 5ms, application-code: 27ms)
+ GET / 200 in 239ms (next.js: 123ms, application-code: 115ms)
+ GET /health 200 in 226ms (next.js: 215ms, application-code: 11ms)
+ GET /?_r=13_0 200 in 24ms (next.js: 2ms, application-code: 22ms)
+ GET /?_r=14_0 200 in 28ms (next.js: 4ms, application-code: 24ms)
+ GET /?_r=15_0 200 in 22ms (next.js: 2ms, application-code: 20ms)
+ GET /?_r=16_0 200 in 26ms (next.js: 2ms, application-code: 24ms)
+ GET /?_r=18_0 200 in 28ms (next.js: 2ms, application-code: 26ms)
