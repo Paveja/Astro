@@ -1,0 +1,74 @@
+revolte:
+  version: '1.0'
+  project: First proj
+  appName: fapp
+  config:
+    codeReview:
+      summarize: true
+      suggestFixes: true
+      commentStyle: Balanced
+    testSuite:
+      command: npm run test
+  workflow:
+    developerWorkflow:
+      enabled: true
+  env:
+    preview:
+      codeReview: true
+      testSuite: true
+      services:
+        rid_1:
+          type: WEB_APP
+          name: web-app_service
+          entryPoint: index.js
+          properties:
+            indexPage: index.html
+            errorPage: error.html
+            enableCdn: false
+            variables:
+              BASE_URL: /api/v1
+    qa:
+      codeReview: true
+      testSuite: true
+      branch: main
+      services:
+        rid_1:
+          type: WEB_APP
+          name: web-app_service
+          entryPoint: index.js
+          properties:
+            indexPage: index.html
+            errorPage: error.html
+            enableCdn: false
+            variables:
+              BASE_URL: /api/v1
+    staging:
+      codeReview: true
+      testSuite: true
+      branch: main
+      services:
+        rid_1:
+          type: WEB_APP
+          name: web-app_service
+          entryPoint: index.js
+          properties:
+            indexPage: index.html
+            errorPage: error.html
+            enableCdn: false
+            variables:
+              BASE_URL: /api/v1
+    production:
+      codeReview: true
+      testSuite: true
+      branch: main
+      services:
+        rid_1:
+          type: WEB_APP
+          name: web-app_service
+          entryPoint: index.js
+          properties:
+            indexPage: index.html
+            errorPage: error.html
+            enableCdn: false
+            variables:
+              BASE_URL: /api/v1
