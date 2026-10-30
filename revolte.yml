@@ -20,13 +20,10 @@ revolte:
         rid_1:
           type: WEB_APP
           name: web-app_service
-          entryPoint: index.js
+          entryPoint: server.js
+          port: 4173
           properties:
-            indexPage: index.html
-            errorPage: error.html
             enableCdn: false
-            variables:
-              BASE_URL: /api/v1
     qa:
       codeReview: true
       testSuite: true
