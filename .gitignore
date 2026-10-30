@@ -1,0 +1,10 @@
+node_modules/
+*.log
+.DS_Store
+
+# Crash artifacts
+core
+core.*
+*.heapsnapshot
+report.*.json
+isolate-*.log
