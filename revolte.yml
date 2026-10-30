@@ -21,6 +21,7 @@ revolte:
           type: WEB_APP
           name: web-app_service
           entryPoint: server.js
+          port: 4173
           properties:
             enableCdn: false
     qa:
