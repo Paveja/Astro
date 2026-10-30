@@ -1,0 +1,285 @@
+---
+const title = 'Make room for yellow.';
+const description = 'A clear signal for ideas that deserve to be seen.';
+---
+
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width" />
+		<meta name="description" content={description} />
+		<meta name="generator" content={Astro.generator} />
+		<title>{title}</title>
+	</head>
+	<body>
+		<main class="page-shell">
+			<div class="topline" aria-label="Page status">
+				<span class="status-dot" aria-hidden="true"></span>
+				<span>Signal / 001</span>
+			</div>
+
+			<section class="hero" aria-labelledby="hero-title">
+				<div class="hero-copy">
+					<p class="eyebrow">A brighter point of view</p>
+					<h1 id="hero-title">Make room <em>for yellow.</em></h1>
+					<p class="lede">{description}</p>
+					<button class="primary-action" type="button" data-action>
+						<span>Bring it forward</span>
+						<span class="arrow" aria-hidden="true">↗</span>
+					</button>
+					<p class="action-status" role="status" aria-live="polite" data-status></p>
+				</div>
+
+				<div class="color-field" aria-label="A field of vivid yellow" role="img">
+					<span class="field-label">#FFD43B</span>
+					<span class="field-mark" aria-hidden="true"></span>
+					<span class="field-note">Light finds a way in.</span>
+				</div>
+			</section>
+
+			<footer class="footer-note">
+				<span>Clear by nature.</span>
+				<span>© 2026</span>
+			</footer>
+		</main>
+	</body>
+</html>
+
+<style>
+	:global(*) {
+		box-sizing: border-box;
+	}
+
+	:global(:root) {
+		--yellow: #ffd43b;
+		--ink: #171714;
+		--muted-ink: #6a695f;
+		--line: rgba(23, 23, 20, 0.18);
+		--space-1: 0.5rem;
+		--space-2: 1rem;
+		--space-3: 1.5rem;
+		--space-4: 2rem;
+		--space-5: 3rem;
+		--space-6: 5rem;
+	}
+
+	:global(body) {
+		margin: 0;
+		background: var(--yellow);
+		color: var(--ink);
+		font-family: Georgia, 'Times New Roman', serif;
+	}
+
+	.page-shell {
+		min-height: 100svh;
+		padding: clamp(1.25rem, 3vw, 2.75rem) clamp(1.25rem, 5vw, 5rem) 1.25rem;
+		display: flex;
+		flex-direction: column;
+	}
+
+	.topline,
+	.footer-note {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		font-family: Arial, Helvetica, sans-serif;
+		font-size: 0.7rem;
+		font-weight: 700;
+		letter-spacing: 0.16em;
+		line-height: 1;
+		text-transform: uppercase;
+	}
+
+	.topline {
+		padding-bottom: var(--space-2);
+		border-bottom: 1px solid var(--line);
+	}
+
+	.status-dot {
+		width: 0.55rem;
+		height: 0.55rem;
+		margin-right: 0.6rem;
+		border-radius: 50%;
+		background: var(--ink);
+		display: inline-block;
+		box-shadow: 0 0 0 0.25rem rgba(23, 23, 20, 0.08);
+	}
+
+	.topline span:last-child {
+		margin-left: auto;
+	}
+
+	.hero {
+		flex: 1;
+		width: min(100%, 86rem);
+		margin: 0 auto;
+		padding: clamp(3rem, 10vh, 8rem) 0 clamp(3rem, 10vh, 8rem);
+		display: grid;
+		grid-template-columns: minmax(0, 0.9fr) minmax(16rem, 1.1fr);
+		gap: clamp(2.5rem, 8vw, 9rem);
+		align-items: center;
+	}
+
+	.hero-copy {
+		max-width: 35rem;
+	}
+
+	.eyebrow {
+		margin: 0 0 var(--space-3);
+		font-family: Arial, Helvetica, sans-serif;
+		font-size: 0.72rem;
+		font-weight: 700;
+		letter-spacing: 0.16em;
+		text-transform: uppercase;
+	}
+
+	h1 {
+		max-width: 11ch;
+		margin: 0;
+		font-size: clamp(4rem, 9vw, 8.75rem);
+		font-weight: 400;
+		letter-spacing: -0.08em;
+		line-height: 0.82;
+	}
+
+	h1 em {
+		display: block;
+		font-style: italic;
+	}
+
+	.lede {
+		max-width: 25rem;
+		margin: var(--space-4) 0 var(--space-5);
+		font-size: clamp(1.15rem, 1.8vw, 1.55rem);
+		line-height: 1.3;
+	}
+
+	.primary-action {
+		padding: 0.95rem 1.1rem;
+		border: 1px solid var(--ink);
+		background: var(--ink);
+		color: var(--yellow);
+		font: 700 0.75rem/1 Arial, Helvetica, sans-serif;
+		letter-spacing: 0.12em;
+		text-transform: uppercase;
+		cursor: pointer;
+		display: inline-flex;
+		align-items: center;
+		gap: 2.25rem;
+		transition: background 180ms ease, color 180ms ease, transform 180ms ease;
+	}
+
+	.primary-action:hover {
+		background: transparent;
+		color: var(--ink);
+		transform: translateY(-0.15rem);
+	}
+
+	.primary-action:active {
+		transform: translateY(0.05rem);
+	}
+
+	.primary-action:focus-visible {
+		outline: 3px solid var(--ink);
+		outline-offset: 4px;
+	}
+
+	.arrow {
+		font-size: 1.15rem;
+		line-height: 0.5;
+	}
+
+	.action-status {
+		min-height: 1.2em;
+		margin: var(--space-2) 0 0;
+		font-family: Arial, Helvetica, sans-serif;
+		font-size: 0.75rem;
+		font-weight: 700;
+		letter-spacing: 0.06em;
+		text-transform: uppercase;
+	}
+
+	.color-field {
+		min-height: min(55vw, 36rem);
+		padding: var(--space-3);
+		background: var(--yellow);
+		border: 1px solid var(--ink);
+		position: relative;
+		display: flex;
+		align-items: flex-end;
+		justify-content: space-between;
+		box-shadow: 1.25rem 1.25rem 0 var(--ink);
+	}
+
+	.field-label,
+	.field-note {
+		font-family: Arial, Helvetica, sans-serif;
+		font-size: 0.68rem;
+		font-weight: 700;
+		letter-spacing: 0.12em;
+		text-transform: uppercase;
+	}
+
+	.field-mark {
+		width: clamp(4rem, 10vw, 8rem);
+		height: clamp(4rem, 10vw, 8rem);
+		border-radius: 50%;
+		background: var(--ink);
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+	}
+
+	.field-mark::after {
+		content: '';
+		width: 30%;
+		height: 30%;
+		border-radius: 50%;
+		background: var(--yellow);
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+	}
+
+	.footer-note {
+		padding-top: var(--space-2);
+		border-top: 1px solid var(--line);
+		color: var(--muted-ink);
+	}
+
+	@media (max-width: 720px) {
+		.page-shell {
+			padding-inline: 1.25rem;
+		}
+
+		.hero {
+			grid-template-columns: 1fr;
+			gap: 3rem;
+			padding-block: 4rem;
+		}
+
+		.color-field {
+			min-height: 19rem;
+			box-shadow: 0.75rem 0.75rem 0 var(--ink);
+		}
+	}
+
+	@media (prefers-reduced-motion: reduce) {
+		.primary-action {
+			transition: none;
+		}
+	}
+</style>
+
+<script>
+	const action = document.querySelector<HTMLButtonElement>('[data-action]');
+	const status = document.querySelector<HTMLElement>('[data-status]');
+
+	action?.addEventListener('click', () => {
+		if (status) {
+			status.textContent = 'Signal received.';
+		}
+	});
+</script>
