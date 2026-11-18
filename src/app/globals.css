@@ -1,0 +1,63 @@
+@import 'tailwindcss';
+
+:root {
+  --background: #f7f2e9;
+  --foreground: #2d2926;
+  --card: #fffdf9;
+  --card-foreground: #2d2926;
+  --primary: #b5533e;
+  --primary-foreground: #fffdf9;
+  --secondary: #e8ded1;
+  --secondary-foreground: #2d2926;
+  --muted: #eee7dc;
+  --muted-foreground: #6b625b;
+  --accent: #c98a43;
+  --accent-foreground: #2d2926;
+  --border: #ddd1c2;
+  --ring: #b5533e;
+  --radius-control: 0.5rem;
+  --radius-container: 0.75rem;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-border: var(--border);
+  --color-ring: var(--ring);
+  --radius-control: var(--radius-control);
+  --radius-container: var(--radius-container);
+  --font-heading: var(--font-display);
+  --font-sans: var(--font-body);
+}
+
+@layer base {
+  * { border-color: var(--color-border); }
+  body {
+    background: var(--color-background);
+    color: var(--color-foreground);
+    font-family: var(--font-body), sans-serif;
+    -webkit-font-smoothing: antialiased;
+  }
+  ::selection { background: var(--color-accent); color: var(--color-foreground); }
+}
+
+@keyframes rise-in {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-rise-in { animation: rise-in 240ms ease-out both; }
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-rise-in { animation: none; }
+}
