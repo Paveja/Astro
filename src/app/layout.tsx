@@ -1,4 +1,5 @@
 import { Fraunces, Work_Sans } from 'next/font/google';
+import type { ReactNode } from 'react';
 import './globals.css';
 
 const fraunces = Fraunces({
@@ -18,7 +19,7 @@ const metadata = {
 
 export { metadata };
 
-export default function RootLayout({ children }: LayoutProps<'/'>) {
+export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html lang="en" className={`${fraunces.variable} ${workSans.variable} h-full antialiased`}>
       <body className="flex min-h-full flex-col">{children}</body>

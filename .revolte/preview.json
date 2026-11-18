@@ -1,13 +1,13 @@
 {
   "version": 2,
-  "start": "npx next dev --turbopack --hostname 0.0.0.0 --port 4173",
+  "start": "npm run dev -- --hostname 0.0.0.0 --port 4173",
   "port": 4173,
   "install": [
     {
-      "name": "npm deps",
+      "name": "node dependencies",
       "check": "test -d node_modules",
-      "run": "npm ci",
-      "inputs": ["package.json", "package-lock.json"]
+      "run": "npm ci"
     }
-  ]
+  ],
+  "services": []
 }
